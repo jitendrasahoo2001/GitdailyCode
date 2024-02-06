@@ -3,9 +3,10 @@ package com.java.assi3;
 import java.util.*;
 
 public class OrderSystem implements OrderOperation {
-	private Map<String,Customer> customerMap;
+//	private Map<String,Customer> customerMap;
 	
 	
+	Map<String, Customer> customerMap = new HashMap<>();
 
 	public OrderSystem() {
 		super();

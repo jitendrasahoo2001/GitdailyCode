@@ -8,14 +8,14 @@ public class OrderOperationApp2 {
 	    public static void main(String[] args) {
 	        OrderOperation orderSystem = new OrderSystem();
 
-	        Product product1 = new Product("P001", 20.0);
-	        Product product2 = new Product("P002", 15.0);
+	        Product product1 = new Product("P001", 200.0);
+	        Product product2 = new Product("P002", 150.0);
 
-	        Customer customer1 = new Customer();
+	        Customer customer1 = new Customer("C001", null);
 	        customer1.getOrders().put("P001",3);
 	        customer1.getOrders().put("P002",2);
 
-	        Customer customer2 = new Customer();
+	        Customer customer2 = new Customer("C002", null);
 	        customer2.getOrders().put("P001", 1);
 	        customer2.getOrders().put("P002", 4);
 
@@ -40,12 +40,13 @@ public class OrderOperationApp2 {
 
 	        for (Map.Entry<String, Customer> entry : customerMap.entrySet()) {
 	            String customerId = entry.getKey();
+	            
 	            Customer customer = entry.getValue();
 
 	            double totalOrderValue = orderSystem.totalOrderValue(customer, productMap);
 
 	            System.out.println("Customer ID: " + customerId);
-	            System.out.println("Total Order Value: $" + totalOrderValue);
+	            System.out.println("Total Order Value: " + totalOrderValue);
 	            System.out.println("-----------------------------");
 	        }
 	    }
